@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Fictício - Atualização Segura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #d9534f;
+    }
+    .tips {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+      text-align: left;
+    }
+    .tips ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Banco Fictício</div>
+    <p>Para continuar usando sua conta, por favor atualize seus dados.</p>
+    <form id="simulacaoForm">
+      <input type="text" placeholder="Número do cartão (fictício)" required>
+      <input type="text" placeholder="Validade (MM/AA)" required>
+      <input type="text" placeholder="CVC (fictício)" required>
+      <button type="submit">Atualizar</button>
+    </form>
+    <div class="message" id="message"></div>
+    <div class="tips">
+      <strong>Dicas de segurança:</strong>
+      <ul>
+        <li>Verifique se o endereço do site é oficial (https://).</li>
+        <li>Nunca insira dados de cartão em sites suspeitos.</li>
+        <li>Ative autenticação em dois fatores (2FA).</li>
+        <li>Use senhas únicas para cada serviço.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('simulacaoForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Mensagem educativa após "envio"
+      message.textContent = "Isto é uma SIMULAÇÃO segura. Nenhum dado foi coletado.";
+    });
+  </script>
+</body>
+</html>
